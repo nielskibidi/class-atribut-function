@@ -1,29 +1,38 @@
-class Komputer {
-  String? merk;
-  int? ram;
-  int? storage;
+class Computer {
+  String? brand;
+  List slotram = [];
+  List slotstorage = [];
   String? processor;
+  Map desc = {
+    'merk': null,
+    'ram': null,
+    'penyimpanan': null,
+  };
 
   cetak() {
-    print('Brand: $merk');
-    print('RAM: $ram GB');
-    print('Storage: $storage GB');
+    print('Brand: $brand');
+    print('RAM: $slotram GB');
+    print('Storage: $slotstorage GB');
     print('Processor: $processor');
   }
 }
 
 void main() {
-  var komputer1 = Komputer();
-  komputer1.merk = 'ASUS';
-  komputer1.ram = 8;
-  komputer1.storage = 1000;
-  komputer1.processor = 'I7 12700H';
-  komputer1.cetak();
+  var comp1 = Computer();
+  comp1.brand = 'ASUS';
+  comp1.slotram.add(8);
+  comp1.slotstorage.add(512);
+  comp1.processor = 'I7 12700H';
+  comp1.cetak();
 
-  var komputer2 = Komputer();
-  komputer2.merk = 'LENOVO';
-  komputer2.ram = 16;
-  komputer2.storage = 512;
-  komputer2.processor = 'I3 11300H';
-  komputer2.cetak();
+  print('==============================');
+
+  var comp2 = Computer();
+  comp2.brand = 'LENOVO';
+  comp2.slotram.add(8);
+  comp2.slotram.add(8);
+  comp2.slotstorage.add(512);
+  comp2.slotstorage.add(1000);
+  comp2.processor = 'I3 11300H';
+  comp2.cetak();
 }
